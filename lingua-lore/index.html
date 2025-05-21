@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingua Lore - Language Listening Practice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .story-content .paragraph-container {
+      margin-bottom: 1rem; /* Add space between paragraphs */
+    }
+    .story-content .paragraph-container p {
+      padding: 0.25rem 0.5rem; 
+      border-radius: 0.25rem; 
+      line-height: 1.75; 
+    }
+    /* Tailwind uses 'dark' class on <html> for dark mode */
+    html:not(.dark) .story-content p.highlighted-sentence {
+      /* Light mode highlight */
+      background-color: #ddd6fe; /* violet-200 */
+      color: #5b21b6; /* violet-700 */
+      font-weight: 600; /* semibold */
+    }
+    html.dark .story-content p.highlighted-sentence {
+      /* Dark mode highlight */
+      background-color: #6d28d9; /* violet-700 */
+      color: #ede9fe; /* violet-100 */
+      font-weight: 600; /* semibold */
+    }
+    
+    .story-content {
+        min-height: 250px; /* Consistent min-height */
+    }
+
+    /* Custom slider styles */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0; /* slate-200 for light mode */
+      outline: none;
+      opacity: 0.8;
+      transition: opacity .2s;
+    }
+    input[type="range"]:hover {
+      opacity: 1;
+    }
+    html.dark input[type="range"] {
+      background: #334155; /* indigo-700 (adjusted from slate-600 for better theme fit) */
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3b82f6; /* blue-500 */
+      cursor: pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3b82f6; /* blue-500 */
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-indigo-950 transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>

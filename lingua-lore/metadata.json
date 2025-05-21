@@ -1,0 +1,5 @@
+{
+  "name": "Language Listening Practice",
+  "description": "An application for English speakers to practice listening comprehension in French or Spanish by generating stories on chosen topics and providing text-to-speech functionality.",
+  "requestFramePermissions": []
+}
